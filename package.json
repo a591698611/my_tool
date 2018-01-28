@@ -1,0 +1,11 @@
+{
+  "name": "my_tool",
+  "version": "1.0.0",
+  "description": "my_tool",
+  "scripts": {
+  },
+  "author": "Shen",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
