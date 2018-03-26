@@ -4,7 +4,7 @@ import {hasClass, addClass, removeClass} from './class';
 import {getCookie, setCookie, removeCookie} from './cookie';
 import {gsstyle} from './css';
 import {getExplore, getOS} from './device';
-import {offset, getScrollTop, setScrollTop, scrollTo, windowResize, contains, serialize} from './dom';
+import {offset, getScrollTop, setScrollTop, scrollTo, windowResize, contains, serialize, getSize} from './dom';
 import {isFunction, debounce} from './function'; // TODO
 import {maxNum, minNum, isNumber} from './number';
 import {isEmptyObject, shallowClone, deepClone} from './object';
@@ -12,7 +12,7 @@ import {isBool, isLeapYear, length} from './other';
 import {randomNum, randomSort} from './random';
 import {isIphone, isMail, isCE, isIdCard, isNum, isLetter, isYYYYMMDD, isURL} from './regexp';
 import {delNull, removeHTMLLabel} from './remove';
-import {repeat, digitUppercase, trim} from './string';
+import {repeat, digitUppercase, trim, getStrLength} from './string';
 import {formatPassTime, formatRemainTime, isSameDay} from './time';
 import {parseQueryString} from './url';
 
@@ -39,6 +39,7 @@ module.exports = {
   windowResize,
   contains,
   serialize,
+  getSize,
   isFunction,
   debounce,
   maxNum,
@@ -65,6 +66,7 @@ module.exports = {
   repeat,
   digitUppercase,
   trim,
+  getStrLength,
   formatPassTime,
   formatRemainTime,
   isSameDay,
