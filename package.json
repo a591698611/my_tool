@@ -1,6 +1,6 @@
 {
   "name": "my_tool",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "my_tool",
   "scripts": {
     "build": "node script/build.js",
