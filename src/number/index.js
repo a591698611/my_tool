@@ -14,8 +14,23 @@ function minNum(arr) {
 
 const isNumber = (obj) => !isNaN(parseFloat(obj)) && isFinite(obj);
 
+const thouComma = (num) => {
+  num = num.toFixed(2).toString();
+  if (num.indexOf(',') !== -1) num = num.replace(/,/g, '');
+  let ps = num.split('').reverse();
+  let pointIndex = ps.indexOf('.');
+  pointIndex = pointIndex === -1 ? 0 : pointIndex + 1;
+  let newps = [];
+  ps.map((v, i) => {
+    if ((i > pointIndex) && ((i - pointIndex) % 3 === 0)) newps.unshift(',');
+    newps.unshift(v);
+  });
+  return newps.join('');
+};
+
 export default {
   maxNum,
   minNum,
   isNumber,
+  thouComma,
 }

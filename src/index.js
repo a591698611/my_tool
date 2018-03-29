@@ -6,7 +6,7 @@ import {gsstyle} from './css';
 import {getExplore, getOS} from './device';
 import {offset, getScrollTop, setScrollTop, scrollTo, windowResize, contains, serialize, getSize} from './dom';
 import {isFunction, debounce} from './function'; // TODO
-import {maxNum, minNum, isNumber} from './number';
+import {maxNum, minNum, isNumber, thouComma} from './number';
 import {isEmptyObject, shallowClone, deepClone} from './object';
 import {isBool, isLeapYear, length} from './other';
 import {randomNum, randomSort} from './random';
@@ -45,6 +45,7 @@ module.exports = {
   maxNum,
   minNum,
   isNumber,
+  thouComma,
   isEmptyObject,
   shallowClone,
   deepClone,
