@@ -16,9 +16,43 @@ const cache = (function () {
 
 const length = (start, end) => start > end ? 0 : ((end - start) >>> 0);
 
+const assign = (object, ...sources) => {
+  if (object == null) {
+    object = {};
+  }
+  if (sources && sources.length > 0) {
+    sources.forEach(source => {
+      for (let key in source) {
+        if (source.hasOwnProperty(key)) {
+          object[key] = source[key];
+        }
+      }
+    });
+  }
+  return object;
+};
+
+const testBind = that => {
+  const _this = this,
+    slice = Array.prototype.slice,
+    args = slice.apply(arguments, [1]),
+    fNOP = function () {
+    },
+    bound = function () {
+      return _this.apply(this instanceof fNOP ? this : that || window,
+        args.concat(Array.prototype.slice.apply(arguments, [0]))
+      )
+    };
+  fNOP.prototype = _this.prototype;
+  bound.prototype = new fNOP();
+  return bound;
+};
+
 export default {
   isBool,
   isLeapYear,
   cache,
   length,
+  assign,
+  testBind,
 }

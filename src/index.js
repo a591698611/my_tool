@@ -8,7 +8,7 @@ import {offset, getScrollTop, setScrollTop, scrollTo, windowResize, contains, se
 import {isFunction, debounce} from './function'; // TODO
 import {maxNum, minNum, isNumber, thouComma} from './number';
 import {isEmptyObject, shallowClone, deepClone} from './object';
-import {isBool, isLeapYear, length} from './other';
+import {isBool, isLeapYear, length, assign, testBind} from './other';
 import {randomNum, randomSort} from './random';
 import {isIphone, isMail, isCE, isIdCard, isNum, isLetter, isYYYYMMDD, isURL} from './regexp';
 import {delNull, removeHTMLLabel} from './remove';
@@ -52,6 +52,8 @@ module.exports = {
   isBool,
   isLeapYear,
   length,
+  assign,
+  testBind,
   randomNum,
   randomSort,
   isIphone,
