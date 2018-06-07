@@ -1,11 +1,11 @@
 import ajax from './ajax';
-import {arrayEqual, isArray, renderArr, convertArr, flatten} from './array';
+import {arrayEqual, isArray, renderArr, convertArr, flatten, quickSort} from './array';
 import {hasClass, addClass, removeClass} from './class';
 import {getCookie, setCookie, removeCookie} from './cookie';
 import {gsstyle} from './css';
 import {getExplore, getOS} from './device';
 import {offset, getScrollTop, setScrollTop, scrollTo, windowResize, contains, serialize, getSize} from './dom';
-import {isFunction, debounce} from './function'; // TODO
+import {isFunction, debounce, throttle} from './function';
 import {maxNum, minNum, isNumber, thouComma} from './number';
 import {isEmptyObject, shallowClone, deepClone} from './object';
 import {isBool, isLeapYear, length, assign, testBind} from './other';
@@ -23,6 +23,7 @@ module.exports = {
   renderArr,
   convertArr,
   flatten,
+  quickSort,
   addClass,
   hasClass,
   removeClass,
@@ -42,6 +43,7 @@ module.exports = {
   getSize,
   isFunction,
   debounce,
+  throttle,
   maxNum,
   minNum,
   isNumber,

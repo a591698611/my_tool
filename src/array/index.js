@@ -24,10 +24,47 @@ const flatten = (arr) => {
   }, [])
 };
 
+const quickSort = (array, left = 0, right = array.length - 1) => {
+  function operation(array, left, right) {
+    const pivot = array[Math.floor((right + left) / 2)];
+    while (left <= right) {
+      while (compare(array[left], pivot) === -1) {
+        left++;
+      }
+      while (compare(array[right], pivot) === 1) {
+        right--;
+      }
+      if (left <= right) {
+        [array[left], array[right]] = [array[right], array[left]];
+        left++;
+        right--;
+      }
+    }
+    return left;
+  }
+  function compare(a, b) {
+    if (a === b) {
+      return 0;
+    }
+    return a < b ? -1 : 1;
+  }
+  if (array.length > 1) {
+    const index = operation(array, left, right);
+    if (left < index - 1) {
+      quick(array, left, index - 1);
+    }
+    if (index < right) {
+      quick(array, index, right);
+    }
+  }
+  return array;
+};
+
 export default {
   arrayEqual,
   isArray,
   renderArr,
   convertArr,
   flatten,
+  quickSort,
 }
